@@ -2,6 +2,19 @@ import time
 import sys
 import pprint
 import uuid
+import serial
+
+port = "/dev/cu.usbmodem1411" # put your port name here Windows COM1/COM2/...
+baud = 9600 # the same baud rate in your Arduino Code
+ser = serial.Serial(port, baud, timeout=1)
+ # open the serial port
+if ser.isOpen():
+ print(ser.name + ' is open...')
+while True:
+ command = ser.readline()
+ print command
+
+
 
 
 try:
