@@ -25,13 +25,18 @@ def myAppEventCallback(event):
 	print("Received live data from %s (%s) sent at %s: hello=%s x=%s" % (event.deviceId, event.deviceType, event.timestamp.strftime("%H:%M:%S"), data['hello'], data['x']))
 
 
-organization = "quickstart"
-deviceType = "helloWorldDevice"
-deviceId = str(uuid.uuid4())
+organization = "rhq2jx"
+deviceType = "Ardunio-Uno"
+deviceId = "group3"
 appId = deviceId + "_receiver"
-authMethod = None
-authToken = None
+authMethod = "token"
+authToken = "supersecret"
 
+#Organization ID 5xls0r
+#Device Type Ardunio-Uno
+#Device ID group3
+#Authentication Method token
+#Authentication Token WaeOU9xNtNgn4jyJ7x
 
 # Initialize the application client.
 try:
@@ -58,6 +63,7 @@ except Exception as e:
 
 # Connect and send a datapoint "hello" with value "world" into the cloud as an event of type "greeting" 10 times
 deviceCli.connect()
+print("---------Connected---------")
 for x in range (0,10):
 	data = { 'hello' : 'world', 'x' : x}
 	def myOnPublishCallback():
