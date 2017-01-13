@@ -16,11 +16,27 @@ import couchdb
  #command = ser.readline()
  #print command
 
-Organization ID rhq2jx
-Device Type Android
-Device ID iot3
-Authentication Method token
-Authentication Token supersecret
+#Organization ID: rhq2jx
+#Device Type: Android
+#Device ID: iot3
+#Authentication Method: token
+#Authentication Token: supersecret
+
+{
+  "credentials": {
+    "url": "https://039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix:0ee17153c8ea9a820af80505f5eff56af2ec76eb56c7b734994178f23f84554c@039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix.cloudant.com",
+    "username": "039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix",
+    "password": "0ee17153c8ea9a820af80505f5eff56af2ec76eb56c7b734994178f23f84554c"
+  }
+}
+
+{
+  "username": "039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix",
+  "password": "0ee17153c8ea9a820af80505f5eff56af2ec76eb56c7b734994178f23f84554c",
+  "host": "039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix.cloudant.com",
+  "port": 443,
+  "url": "https://039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix:0ee17153c8ea9a820af80505f5eff56af2ec76eb56c7b734994178f23f84554c@039fb976-69d8-43e7-9c0f-3381bd237f77-bluemix.cloudant.com"
+}
 
 
 
@@ -79,7 +95,7 @@ except Exception as e:
 deviceCli.connect()
 print("---------Connected---------")
 for x in range (0,20):
-	data = { 'hello' : 'up', 'x' : x}
+	data = { 'hello' : 'down', 'x' : x}
 	def myOnPublishCallback():
 		print("Confirmed event %s received by IoTF\n" % x)
 

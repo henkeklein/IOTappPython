@@ -24,9 +24,8 @@ tableRowTemplate = "%-33s%-30s%s"
 def myEventCallback(event):
 	print("%-33s%-30s%s" % (event.timestamp.isoformat(), event.device, event.event + ": " + json.dumps(event.data)))
 
-
 def myStatusCallback(status):
-	if status.action == "Disconnect":
+	if status.action == "Disconnected":
 		print(tableRowTemplate % (status.time.isoformat(), status.device, status.action + " " + status.clientAddr + " (" + status.reason + ")"))
 	else:
 		print(tableRowTemplate % (status.time.isoformat(), status.device, status.action + " " + status.clientAddr))
@@ -63,12 +62,18 @@ if __name__ == "__main__":
 		print(str(err))
 		usage()
 		sys.exit(2)
-#token = JLwUBDeZt2r2&k2ax!
+
+#Organization ID rhq2jx
+#Device Type Computer
+#Device ID pythonServer
+#Authentication Method token
+#Authentication Token supersecret
+
 	organization = "rhq2jx"
-	appId = "group3_receiver"
+	appId = "iot3_receiver"
 	authMethod = "token"
-	authKey = "a-rhq2jx-rd8xc6cow6"
-	authToken = "2XWSfo-ZG5lzD3268v"
+	authKey = "a-rhq2jx-tbzhrb2iqz"
+	authToken = "GJwJ!SGW5m)P0IGO5u"
 	configFilePath = None
 	deviceType = "+"
 	deviceId = "+"
